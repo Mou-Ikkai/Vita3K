@@ -165,12 +165,12 @@ void draw_archive_install_dialog(GuiState &gui, HostState &host) {
             ImGui::PushStyleVar(ImGuiStyleVar_ChildBorderSize, 0.f);
             ImGui::BeginChild("##content_installed_list", ImVec2(WINDOW_SIZE.x - (10.f * SCALE.x), WINDOW_SIZE.y - (BUTTON_SIZE.y * 2.f) - (25 * SCALE.y)), false, ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings);
             if (!content_installed.empty()) {
-                ImGui::TextColored(GUI_COLOR_TEXT_TITLE, "%lu content have success installed:", content_installed.size());
+                ImGui::TextColored(GUI_COLOR_TEXT_TITLE, "%lu content(s) has successfully installed:", content_installed.size());
                 for (const auto &content : content_installed)
                     ImGui::TextColored(GUI_COLOR_TEXT, "%s [%s]", content.title_id.c_str(), content.title.c_str());
             }
             if (!content_failed.empty()) {
-                ImGui::TextColored(GUI_COLOR_TEXT_TITLE, "%lu content have failed install:", content_failed.size());
+                ImGui::TextColored(GUI_COLOR_TEXT_TITLE, "%lu content(s) has failed install:", content_failed.size());
                 for (const auto &content : content_failed)
                     ImGui::TextColored(GUI_COLOR_TEXT, "%s", content.string().c_str());
             }
